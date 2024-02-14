@@ -111,3 +111,79 @@ const secondLargestElement = (arr: number[]): number => {
 };
 
 console.log(secondLargestElement([3, 2, 5, 6, 7]));
+
+// = = = = = 
+
+// Check if an Array is Sorted
+// brute force approach
+const isSorted = (arr: number[]): boolean => {
+    const n = arr.length;
+    if (n < 2) return true;
+
+    for (let i = 0; i < n; i++) {
+        for (let j = i + 1; j < n; j++) {
+            if (arr[i] > arr[j]) {
+                return false;
+            }
+        }
+    }
+    return true;
+};
+
+console.log(isSorted([1, 2, 3, 4, 5, 5, 4, 3, 5])); // false
+
+// = = = = =
+
+// Check if an Array is Sorted
+// optimal approach
+const isSorted2 = (arr: number[]): boolean => {
+    const n = arr.length;
+    if (n < 2) return true;
+
+    for (let i = 0; i < n; i++) {
+        if (arr[i] > arr[i + 1]) {
+            return false;
+        }
+    }
+    return true;
+};
+
+console.log(isSorted2([3, 4, 5, 1, 2])); // true
+
+// = = = = =
+
+// Remove Duplicates in-place from Sorted Array
+const removeDuplicates = (arr: number[]): number => {
+    let set = new Set(arr);
+    let uniqueElements = Array.from(set);
+    for (let i = 0; i < uniqueElements.length; i++) {
+        arr[i] = uniqueElements[i];
+    }
+    return uniqueElements.length;
+};
+
+const arr: number[] = [1, 1, 2, 2, 2, 3, 3];
+const m: number = removeDuplicates(arr);
+
+console.log("The array after removing duplicate elements is:");
+for (let i = 0; i < m; i++) {
+    console.log(arr[i]);
+}
+
+// = = = = =
+
+// Remove Duplicates in-place from Sorted Array
+const removeDuplicates2 = (arr: number[]): number[] => {
+    let i = 0;
+    for (let j = 1; j < arr.length; j++) {
+        if (arr[i] !== arr[j]) {
+            i++;
+            arr[i] = arr[j];
+        }
+    }
+    arr.splice(i + 1);
+    return arr;
+};
+
+console.log(removeDuplicates2([1, 1, 2, 2, 3, 3, 4, 4]));
+
