@@ -189,7 +189,8 @@ console.log(removeDuplicates2([1, 1, 2, 2, 3, 3, 4, 4]));
 
 // = = = = = 
 
-const leftRotateArrayByOne = (arr: number[], n: number): void => {
+// Left Rotate the Array by One 1
+const leftRotateArrayByOne1 = (arr: number[], n: number): void => {
   let temp: number[] = new Array(n);
   for (let i = 1; i < n; i++) {
     temp[i - 1] = arr[i];
@@ -200,6 +201,39 @@ const leftRotateArrayByOne = (arr: number[], n: number): void => {
 
 let n: number = 5;
 let arr: number[] = [1, 2, 3, 4, 5];
-leftRotateArrayByOne(arr, n);
+leftRotateArrayByOne1(arr, n);
 
 // = = = = = 
+
+// Left Rotate the Array by One 2
+const leftRotateTheArrayByOne2 = (arr: number[]): number[] => {
+    const n = arr.length;
+    const temp = arr[0];
+    for (let i = 0; i < n; i++) {
+        arr[i] = arr[i + 1];
+    }
+    arr[n - 1] = temp;
+    return arr;
+}
+
+console.log(leftRotateTheArrayByOne2([1, 2, 3, 4, 5]));
+
+// = = = = = 
+
+// Rotate array by K elements
+const rotateTheArray = (arr: number[], k: number, rotate: string): number[] | string => {
+    const n = arr.length;
+    if (rotate === "right") {
+        let part = arr.splice(n - k, k);
+        return [...part, ...arr];
+    }
+    else if (rotate === "left") {
+        let part = arr.splice(0, k);
+        return [...arr, ...part];
+    }
+    else {
+        return `Input should only be 'left' or 'right' but not ${rotate}`
+    }
+}
+
+console.log(rotateTheArray([1, 2, 3, 4, 5], 2, "l"));
