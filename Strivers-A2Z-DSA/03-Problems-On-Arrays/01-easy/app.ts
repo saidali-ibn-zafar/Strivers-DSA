@@ -187,3 +187,19 @@ const removeDuplicates2 = (arr: number[]): number[] => {
 
 console.log(removeDuplicates2([1, 1, 2, 2, 3, 3, 4, 4]));
 
+// = = = = = 
+
+const leftRotateArrayByOne = (arr: number[], n: number): void => {
+  let temp: number[] = new Array(n);
+  for (let i = 1; i < n; i++) {
+    temp[i - 1] = arr[i];
+  }
+  temp[n - 1] = arr[0];
+  console.log(temp);
+}
+
+let n: number = 5;
+let arr: number[] = [1, 2, 3, 4, 5];
+leftRotateArrayByOne(arr, n);
+
+// = = = = = 
