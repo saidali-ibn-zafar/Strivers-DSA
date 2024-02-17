@@ -237,3 +237,26 @@ const rotateTheArray = (arr: number[], k: number, rotate: string): number[] | st
 }
 
 console.log(rotateTheArray([1, 2, 3, 4, 5], 2, "l"));
+
+// = = = = = 
+
+// Move all Zeros to the end of the array
+const moveZeros = (arr: number[]): number[] => {
+    const n: number = arr.length;
+    let temp: number[] = [];
+  
+    for(let i: number = 0; i < n; i++){
+        if(arr[i] !== 0) {
+            temp.push(arr[i]);
+        }
+    }
+    while(temp.length < n) {
+        temp.push(0);
+    }
+    
+    return temp;
+}
+
+const result: number[] = moveZeros([0, 2, 3, 0, 3, 0, 5, 0, 0, 0, 3, 4, 5]);
+console.log(result);
+
