@@ -260,3 +260,34 @@ const moveZeros = (arr: number[]): number[] => {
 const result: number[] = moveZeros([0, 2, 3, 0, 3, 0, 5, 0, 0, 0, 3, 4, 5]);
 console.log(result);
 
+// = = = = = 
+
+// Move all Zeros to the end of the array OPTIMAL APPROACH
+const moveZerosOptimal = (arr: number[]): number[] => {
+    const n: number = arr.length;
+    let j: number = -1;
+
+    for (let i: number = 0; i < n; i++) {
+        if (arr[i] === 0) {
+            j = i;
+            break;
+        }
+    }
+
+    if (j === -1) {
+        return arr;
+    }
+
+    for (let i: number = j + 1; i < n; i++) {
+        if (arr[i] !== 0) {
+            [arr[j], arr[i]] = [arr[i], arr[j]];
+            j++;
+        }
+    }
+
+    return arr;
+}
+
+const result: number[] = moveZerosOptimal([1, 0, 0, 0, 2]);
+console.log('Final array:', result.join(', '));
+
