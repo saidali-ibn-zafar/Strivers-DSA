@@ -291,3 +291,44 @@ const moveZerosOptimal = (arr: number[]): number[] => {
 const result: number[] = moveZerosOptimal([1, 0, 0, 0, 2]);
 console.log('Final array:', result.join(', '));
 
+// = = = = = 
+
+// Linear Search 
+const linearSearch = (arr: number[], num: number): number => {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === num) {
+      return i;
+    }
+  }
+  return -1;
+};
+
+const arr = [1, 2, 3, 4, 5];
+console.log(linearSearch(arr, 3)); // Output: 2
+
+
+// = = = = = 
+// Find the missing number in an array 
+// Brute Force Approach
+const missingNum = (arr: number[]): number => {
+    const n = arr.length;
+    for(let i = 1; i <= n; i++){
+        let flag = 0;
+
+        for(let j = 0; j < n; j++){
+            if(arr[j] === i){
+                flag = 1;
+                break;
+            }
+        }
+
+        if(flag === 0){
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+const arr = [1, 2, 4, 5, 6];
+console.log(missingNum(arr)); // Output: 3
