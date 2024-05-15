@@ -1,7 +1,7 @@
 // - - - - - - - - - - - - - - - - - - - - - - -
 // Pattern-1: Rectangular Star Pattern
-function pattern1(nRow, nCol) {
-  for (let i = 0; i < nRow; i++) {
+function pattern1(nRows, nCol) {
+  for (let i = 0; i < nRows; i++) {
     let row = "";
     for (let j = 0; j < nCol; j++) {
       row += "*";
@@ -13,8 +13,8 @@ function pattern1(nRow, nCol) {
 // pattern1(3, 3);
 
 // optimized way:
-function pattern1V2(nRow, nCol) {
-  for (let i = 0; i < nRow; i++) {
+function pattern1V2(nRows, nCol) {
+  for (let i = 0; i < nRows; i++) {
     let row = "*".repeat(nCol);
     console.log(row);
   }
@@ -25,8 +25,8 @@ function pattern1V2(nRow, nCol) {
 // - - - - - - - - - - - - - - - - - - - - - - -
 
 // Pattern-2: Right-Angled Triangle Pattern
-function pattern2(nRow) {
-  for (let i = 0; i < nRow; i++) {
+function pattern2(nRows) {
+  for (let i = 0; i < nRows; i++) {
     let row = "";
     for (let j = 0; j <= i; j++) {
       row += "*";
@@ -40,8 +40,8 @@ function pattern2(nRow) {
 // - - - - - - - - - - - - - - - - - - - - - - -
 
 // Pattern - 3: Right-Angled Number Pyramid
-function pattern3(nRow) {
-  for (let i = 1; i <= nRow; i++) {
+function pattern3(nRows) {
+  for (let i = 1; i <= nRows; i++) {
     let row = "";
     for (let j = 1; j <= i; j++) {
       row += j;
@@ -55,8 +55,8 @@ function pattern3(nRow) {
 // - - - - - - - - - - - - - - - - - - - - - - -
 
 // Pattern - 4: Right-Angled Number Pyramid - II
-function pattern4(nRow) {
-  for (let i = 1; i <= nRow; i++) {
+function pattern4(nRows) {
+  for (let i = 1; i <= nRows; i++) {
     let row = "";
     for (let j = 1; j <= i; j++) {
       row += i;
@@ -70,8 +70,8 @@ function pattern4(nRow) {
 // - - - - - - - - - - - - - - - - - - - - - - -
 
 // Pattern-5: Inverted Right Pyramid
-function pattern5(nRow) {
-  for (let i = nRow; i >= 1; i--) {
+function pattern5(nRows) {
+  for (let i = nRows; i >= 1; i--) {
     let row = "";
     for (let j = i; j >= 1; j--) {
       row += "*";
@@ -85,8 +85,8 @@ function pattern5(nRow) {
 // - - - - - - - - - - - - - - - - - - - - - - -
 
 // Pattern - 6: Inverted Numbered Right Pyramid
-function pattern6(nRow) {
-  for (let i = nRow; i >= 1; i--) {
+function pattern6(nRows) {
+  for (let i = nRows; i >= 1; i--) {
     let row = "";
     for (let j = 1; j <= i; j++) {
       row += j;
@@ -95,10 +95,52 @@ function pattern6(nRow) {
   }
 }
 
-pattern6(5);
+// pattern6(5);
 
 // - - - - - - - - - - - - - - - - - - - - - - -
+
+// Pattern - 7: Star Pyramid
+function pattern7(nRows) {
+  for (let i = 0; i < nRows; i++) {
+    let row = "";
+    for (let j = 0; j < nRows - i - 1; j++) {
+      row += " ";
+    }
+    for (let j = 0; j < 2 * i + 1; j++) {
+      row += "*";
+    }
+
+    for (let j = 0; j < nRows - i - 1; j++) {
+      row += " ";
+    }
+    console.log(row);
+  }
+}
+
+pattern7(5);
+
 // - - - - - - - - - - - - - - - - - - - - - - -
+
+// Pattern - 8: Inverted Star Pyramid
+function pattern8(nRows) {
+  for (let i = 0; i < nRows; i++) {
+    let row = "";
+    for (let j = 0; j < i; j++) {
+      row += " ";
+    }
+    for (let j = 0; j < 2 * nRows - (2 * i + 1); j++) {
+      row += "*";
+    }
+
+    for (let j = 0; j < i; j++) {
+      row += " ";
+    }
+    console.log(row);
+  }
+}
+
+pattern8(5);
+
 // - - - - - - - - - - - - - - - - - - - - - - -
 // - - - - - - - - - - - - - - - - - - - - - - -
 // - - - - - - - - - - - - - - - - - - - - - - -
