@@ -117,7 +117,7 @@ function pattern7(nRows) {
   }
 }
 
-pattern7(5);
+// pattern7(5);
 
 // - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -139,10 +139,41 @@ function pattern8(nRows) {
   }
 }
 
-pattern8(5);
+// pattern8(5);
 
 // - - - - - - - - - - - - - - - - - - - - - - -
+
+// Pattern - 9: Diamond Star Pattern
+function pattern9(nRows) {
+  pattern7(nRows);
+  pattern8(nRows);
+}
+
+// pattern9(6);
+
 // - - - - - - - - - - - - - - - - - - - - - - -
+
+// Pattern - 10: Half Diamond Star Pattern
+function pattern10(nRows) {
+  let stars;
+  for (let i = 1; i <= 2 * nRows - 1; i++) {
+    let row = "";
+
+    stars = i;
+
+    if (i > nRows) {
+      stars = 2 * nRows - i;
+    }
+    for (let j = 1; j <= stars; j++) {
+      row += "*";
+    }
+
+    console.log(row);
+  }
+}
+
+pattern10(5);
+
 // - - - - - - - - - - - - - - - - - - - - - - -
 // - - - - - - - - - - - - - - - - - - - - - - -
 // - - - - - - - - - - - - - - - - - - - - - - -
