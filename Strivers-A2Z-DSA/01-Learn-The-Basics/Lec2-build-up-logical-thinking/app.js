@@ -155,9 +155,9 @@ function pattern9(nRows) {
 
 // Pattern - 10: Half Diamond Star Pattern
 function pattern10(nRows) {
-  let stars;
   for (let i = 1; i <= 2 * nRows - 1; i++) {
     let row = "";
+    let stars;
 
     stars = i;
 
@@ -175,6 +175,29 @@ function pattern10(nRows) {
 pattern10(5);
 
 // - - - - - - - - - - - - - - - - - - - - - - -
+
+// Pattern - 11: Binary Number Triangle Pattern
+
+function pattern11(nRows) {
+  for (let i = 0; i < nRows; i++) {
+    let row = "";
+    let start = 1;
+
+    if (i % 2 === 0) {
+      start = 1;
+    } else {
+      start = 0;
+    }
+
+    for (let j = 0; j < i; j++) {
+      row += start;
+      start = 1 - start;
+    }
+    console.log(row);
+  }
+}
+
+pattern11(5);
 // - - - - - - - - - - - - - - - - - - - - - - -
 // - - - - - - - - - - - - - - - - - - - - - - -
 // - - - - - - - - - - - - - - - - - - - - - - -
