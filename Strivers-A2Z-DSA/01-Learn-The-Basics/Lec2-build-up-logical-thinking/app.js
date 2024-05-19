@@ -172,7 +172,7 @@ function pattern10(nRows) {
   }
 }
 
-pattern10(5);
+// pattern10(5);
 
 // - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -184,12 +184,12 @@ function pattern11(nRows) {
     let start = 1;
 
     if (i % 2 === 0) {
-      start = 1;
-    } else {
       start = 0;
+    } else {
+      start = 1;
     }
 
-    for (let j = 0; j < i; j++) {
+    for (let j = 0; j <= i; j++) {
       row += start;
       start = 1 - start;
     }
@@ -197,9 +197,51 @@ function pattern11(nRows) {
   }
 }
 
-pattern11(5);
+// pattern11(5);
+
 // - - - - - - - - - - - - - - - - - - - - - - -
+
+// Pattern - 12: Number Crown Pattern
+function pattern12(nRows) {
+  let spaces = 2 * (nRows - 1);
+
+  for (let i = 1; i <= nRows; i++) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+      row += j;
+    }
+
+    for (let j = 1; j <= spaces; j++) {
+      row += " ";
+    }
+
+    for (let j = i; j >= 1; j--) {
+      row += j;
+    }
+    console.log(row);
+
+    spaces -= 2;
+  }
+}
+
+// pattern12(6);
 // - - - - - - - - - - - - - - - - - - - - - - -
+
+// Pattern - 13: Increasing Number Triangle Pattern
+
+function pattern13(nRows) {
+  let num = 1;
+  for (let i = 1; i <= nRows; i++) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+      row += num + " ";
+      num++;
+    }
+    console.log(row);
+  }
+}
+
+pattern13(5);
 // - - - - - - - - - - - - - - - - - - - - - - -
 // - - - - - - - - - - - - - - - - - - - - - - -
 // - - - - - - - - - - - - - - - - - - - - - - -
