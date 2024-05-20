@@ -241,8 +241,24 @@ function pattern13(nRows) {
   }
 }
 
-pattern13(5);
+// pattern13(5);
+
 // - - - - - - - - - - - - - - - - - - - - - - -
+
+function pattern14(nRows) {
+  for (let i = 0; i < nRows; i++) {
+    let row = "";
+
+    for (let j = 0; j <= i; j++) {
+      row += String.fromCharCode("A".charCodeAt(0) + j) + " ";
+    }
+
+    console.log(row);
+  }
+}
+
+pattern14(5);
+
 // - - - - - - - - - - - - - - - - - - - - - - -
 // - - - - - - - - - - - - - - - - - - - - - - -
 // - - - - - - - - - - - - - - - - - - - - - - -
