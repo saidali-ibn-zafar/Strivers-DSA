@@ -245,6 +245,7 @@ function pattern13(nRows) {
 
 // - - - - - - - - - - - - - - - - - - - - - - -
 
+// Pattern-14: Increasing Letter Triangle Pattern
 function pattern14(nRows) {
   for (let i = 0; i < nRows; i++) {
     let row = "";
@@ -257,11 +258,53 @@ function pattern14(nRows) {
   }
 }
 
-pattern14(5);
+// pattern14(5);
 
 // - - - - - - - - - - - - - - - - - - - - - - -
+
+// Pattern-15: Reverse Letter Triangle Pattern
+function pattern15(nRows) {
+  for (let i = nRows - 1; i >= 0; i--) {
+    let row = "";
+
+    for (let j = 0; j <= i; j++) {
+      row += String.fromCharCode("A".charCodeAt(0) + j) + " ";
+    }
+
+    console.log(row);
+  }
+}
+
+// pattern15(5);
 // - - - - - - - - - - - - - - - - - - - - - - -
+
+// Pattern - 16: Alpha-Ramp Pattern
+function pattern16(nRows) {
+  for (let i = 0; i < nRows; i++) {
+    let row = "";
+
+    for (let j = 0; j <= i; j++) {
+      row += String.fromCharCode("A".charCodeAt(0) + i);
+    }
+    console.log(row);
+  }
+}
+
+// pattern16(5);
+
 // - - - - - - - - - - - - - - - - - - - - - - -
+
+// Pattern - 17: Alpha-Hill Pattern
+function pattern17(nRows) {
+  for (let i = 0; i < nRows; i++) {
+    let row = "";
+    for (let j = 0; j < nRows - i - 1; j++) {
+      row += " ";
+    }
+  }
+}
+
+pattern17(6);
 // - - - - - - - - - - - - - - - - - - - - - - -
 // - - - - - - - - - - - - - - - - - - - - - - -
 // - - - - - - - - - - - - - - - - - - - - - - -
