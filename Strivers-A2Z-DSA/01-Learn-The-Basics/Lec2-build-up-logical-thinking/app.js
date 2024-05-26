@@ -301,10 +301,25 @@ function pattern17(nRows) {
     for (let j = 0; j < nRows - i - 1; j++) {
       row += " ";
     }
+
+    let char = "A";
+    let breakpoint = Math.floor((2 * i + 1) / 2);
+    for (let j = 1; j <= 2 * i + 1; j++) {
+      row += char;
+      if (j <= breakpoint) char = String.fromCharCode(char.charCodeAt(0) + 1);
+      else char = String.fromCharCode(char.charCodeAt(0) - 1);
+    }
+
+    for (let j = 0; j < nRows - i - 1; j++) {
+      row += " ";
+    }
+
+    console.log(row);
   }
 }
 
-pattern17(6);
+pattern17(5);
+
 // - - - - - - - - - - - - - - - - - - - - - - -
 // - - - - - - - - - - - - - - - - - - - - - - -
 // - - - - - - - - - - - - - - - - - - - - - - -
